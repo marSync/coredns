@@ -1,0 +1,23 @@
+services:
+  coredns:
+    image: coredns/coredns:latest
+    container_name: coredns
+    restart: always
+    ports:
+      - name: dns-tcp
+        target: 53
+        host_ip: 127.0.0.1
+        published: "15353"
+        protocol: tcp
+        app_protocol: dns
+      - name: dns-udp
+        target: 53
+        host_ip: 127.0.0.1
+        published: "15353"
+        protocol: udp
+        app_protocol: dns
+    volumes:
+      - ./config/Corefile:/Corefile
+      - ./zones/db.singleton.kube.internal:/zones/db.singleton.kube.internal
+      - ./zones/db.55.211.10.in-addr.arpa:/zones/db.55.211.10.in-addr.arpa
+    command: -conf /Corefile
