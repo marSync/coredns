@@ -4,16 +4,28 @@ services:
     container_name: coredns
     restart: always
     ports:
-      - name: dns-tcp
+      - name: eth0-tcp-dns
         target: 53
-        host_ip: 127.0.0.1
-        published: "15353"
+        host_ip: <eth0_host_ip>
+        published: "53"
         protocol: tcp
         app_protocol: dns
-      - name: dns-udp
+      - name: eth0-udp-dns
         target: 53
-        host_ip: 127.0.0.1
-        published: "15353"
+        host_ip: <eth0_host_ip>
+        published: "53"
+        protocol: udp
+        app_protocol: dns
+      - name: eth1-tcp-dns
+        target: 53
+        host_ip: <eth1_host_ip>
+        published: "53"
+        protocol: tcp
+        app_protocol: dns
+      - name: eth1-udp-dns
+        target: 53
+        host_ip: <eth1_host_ip>
+        published: "53"
         protocol: udp
         app_protocol: dns
     volumes:
