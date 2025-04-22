@@ -1,0 +1,17 @@
+. {
+    forward . 1.1.1.1 8.8.8.8
+    log
+    errors
+}
+
+singleton.kube.internal {
+    file /zones/db.singleton.kube.internal singleton.kube.internal
+    log
+    errors
+}
+
+211.10.in-addr.arpa {
+    file /zones/db.55.211.10.in-addr.arpa 211.10.in-addr.arpa
+    log
+    errors
+}

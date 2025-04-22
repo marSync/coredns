@@ -1,0 +1,35 @@
+services:
+  coredns:
+    image: coredns/coredns:latest
+    container_name: coredns
+    restart: always
+    ports:
+      - name: eth0-tcp-dns
+        target: 53
+        host_ip: <eth0_host_ip>
+        published: "53"
+        protocol: tcp
+        app_protocol: dns
+      - name: eth0-udp-dns
+        target: 53
+        host_ip: <eth0_host_ip>
+        published: "53"
+        protocol: udp
+        app_protocol: dns
+      - name: eth1-tcp-dns
+        target: 53
+        host_ip: <eth1_host_ip>
+        published: "53"
+        protocol: tcp
+        app_protocol: dns
+      - name: eth1-udp-dns
+        target: 53
+        host_ip: <eth1_host_ip>
+        published: "53"
+        protocol: udp
+        app_protocol: dns
+    volumes:
+      - ./config/Corefile:/Corefile
+      - ./zones/db.singleton.kube.internal:/zones/db.singleton.kube.internal
+      - ./zones/db.55.211.10.in-addr.arpa:/zones/db.55.211.10.in-addr.arpa
+    command: -conf /Corefile
