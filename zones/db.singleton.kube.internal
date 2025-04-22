@@ -1,0 +1,16 @@
+$TTL 86400
+@   IN  SOA ns.singleton.kube.internal. admin.kube.internal. (
+        2025042202 ; serial
+        3600       ; refresh
+        1800       ; retry
+        604800     ; expire
+        86400 )    ; minimum
+
+    IN  NS ns.singleton.kube.internal.
+
+ns                  IN  A     10.211.55.15
+apps                IN  A     10.211.55.15
+*.apps              IN  A     10.211.55.15
+api                 IN  A     10.211.55.15
+api-int             IN  A     10.211.55.15
+host                IN  A     10.211.55.15
