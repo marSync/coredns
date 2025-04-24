@@ -18,6 +18,7 @@
 ## Prerequisites:
 - Files configured:
   - `# Zone configuration` at `./zones/`
+    - Sample can be found [RedHat DNS requirements](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/installing_on_bare_metal/user-provisioned-infrastructure#installation-dns-user-infra_installing-bare-metal)
     - **Note:** it is generally a good idea to keed zones in separate files  
   - `# Corefile` at `./config/`
 

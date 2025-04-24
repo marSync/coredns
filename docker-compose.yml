@@ -30,6 +30,6 @@ services:
         app_protocol: dns
     volumes:
       - ./config/Corefile:/Corefile
-      - ./zones/db.singleton.kube.internal:/zones/db.singleton.kube.internal
+      - ./zones/db.kube.internal:/zones/db.kube.internal
       - ./zones/db.55.211.10.in-addr.arpa:/zones/db.55.211.10.in-addr.arpa
     command: -conf /Corefile
