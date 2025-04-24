@@ -4,8 +4,8 @@
     errors
 }
 
-singleton.kube.internal {
-    file /zones/db.singleton.kube.internal singleton.kube.internal
+kube.internal {
+    file /zones/db.kube.internal kube.internal
     log
     errors
 }
