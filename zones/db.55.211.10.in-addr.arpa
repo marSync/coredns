@@ -8,5 +8,7 @@ $TTL 86400
 
     IN  NS ns.kube.internal.
 
-15.55   IN PTR api.singleton.kube.internal.
+15.55   IN PTR singleton.kube.internal.
+        IN PTR api.singleton.kube.internal.
         IN PTR api-int.singleton.kube.internal.
+        IN PTR bootstrap.singleton.kube.internal.
